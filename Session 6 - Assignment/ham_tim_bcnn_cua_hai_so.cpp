@@ -1,20 +1,18 @@
 #include<stdio.h>
+#include<math.h>
 
 int boichungnhonhatcua2so(int a, int b){
-	int bcnn;//bcnn : boi chung nho nhat cua hai so a va b
-	int min =a,max =b;
+	int bcnn;//bcnn : boi chung nho nhat cua hai so a va b là so nguyen duong
+	int min =abs(a),max =abs(b);
 	if(a > b){
-		min = b,max = a; 
+		min = abs(b),max = abs(a); 
 	}	
-	if(min <= max){
-		for(int i = 1; i <= max;i++){
-			if((min * i) % max  == 0){
-				bcnn = min * i;
-				break;
+	for(int i = 1; i <= max;i++){
+		if((min * i) % max  == 0){
+			bcnn = min * i;
+			break;
 			}	
-		}
-	}
-	
+		}	
 	return bcnn;
 }
 

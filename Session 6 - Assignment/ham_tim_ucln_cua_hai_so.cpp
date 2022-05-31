@@ -1,19 +1,20 @@
 #include<stdio.h>
+#include<math.h>
 
 int uocchunglonnhat2so (int a, int b){
 	int ucln;// ucln : uoc chung lon nhat
-	int min = a,max = b;
-	if(a > b){
-		min = b,max = a;
+	int min = abs(a),max= abs(b);
+	if(abs(a) > abs(b)){
+		min = abs(b),max = abs(a);
 	}
-	if(min <= max){
-		for(int i = min; i > 0;i--){
-			if(min % i == 0 && max % i == 0){
-				ucln = i;
-				break;
+	
+	for(int i = min; i > 0;i--){
+		if(min % i == 0 && max % i == 0){
+			ucln = i;
+			break;
 			}
 		}
-	}
+	
 	return ucln;
 }
 
